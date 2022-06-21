@@ -1,4 +1,4 @@
-package com.nishanth.foody1
+package com.nishanth.foody1.ui.fragments.recipes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
