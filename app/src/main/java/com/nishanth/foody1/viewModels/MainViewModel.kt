@@ -1,15 +1,17 @@
-package com.nishanth.foody1
+package com.nishanth.foody1.viewModels
 
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.nishanth.foody1.MyApplication
+import com.nishanth.foody1.NetworkResult
 import com.nishanth.foody1.data.Repository
+import com.nishanth.foody1.data.database.RecipesEntity
 import com.nishanth.foody1.models.FoodRecipe
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -17,6 +19,18 @@ class MainViewModel @ViewModelInject constructor(
     private val repository: Repository,
     application: MyApplication
 ) : AndroidViewModel(application) {
+
+    /**ROOM DATABASE**/
+
+    var readRecipes: LiveData<List<RecipesEntity>> = repository.locale.readRecipes().asLiveData()
+
+    private fun insertRecipes(recipesEntity: RecipesEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.locale.insertRecipes(recipesEntity)
+        }
+    }
+
+    /** RETROFIT **/
 
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
@@ -30,12 +44,22 @@ class MainViewModel @ViewModelInject constructor(
             try {
                 val response = repository.remote.getRecipes(queries)
                 recipesResponse.value = handleRecipesResponse(response)
+                val foodRecipe = recipesResponse.value!!.data
+                if (foodRecipe != null) {
+                    offlineCache(foodRecipe)
+                }
+
             } catch (e: Exception) {
                 recipesResponse.value = NetworkResult.Error("Recipes not found")
             }
         } else {
             recipesResponse.value = NetworkResult.Error("No Internet Connection")
         }
+    }
+
+    private fun offlineCache(foodRecipe: FoodRecipe) {
+        val recipesEntity = RecipesEntity(foodRecipe)
+        insertRecipes(recipesEntity)
     }
 
     private fun handleRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {
@@ -67,10 +91,10 @@ class MainViewModel @ViewModelInject constructor(
         val activeNetwork = connectivityManager.activeNetwork ?: return false
         val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
         return when {
-            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> return true
-            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> return true
-            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> return true
-            else -> return false
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            else -> false
         }
     }
 }

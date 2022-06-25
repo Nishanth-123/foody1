@@ -1,11 +1,11 @@
 package com.nishanth.foody1.di
 
-import com.nishanth.foody1.Constants.Companion.BASE_URL
+import com.nishanth.foody1.util.Constants.Companion.BASE_URL
 import com.nishanth.foody1.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ApplicationComponent::class)
 object NetworkModule {
 
     @Singleton

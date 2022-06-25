@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_clock.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.20092592592592592" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_heart.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_joke.xml" value="0.2703125" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_leaf.xml" value="0.20277777777777778" />
@@ -16,8 +17,10 @@
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_jokes.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_recipes.xml" value="0.25" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/placeholder_row_layout.xml" value="0.25" />
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/recipes_row_layout.xml" value="0.25" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/menu/recipes_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
       </map>
     </option>

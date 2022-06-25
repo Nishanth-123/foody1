@@ -5,7 +5,9 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class Repository @Inject constructor(
+    localDataSource: LocalDataSource,
     remoteDataSource: RemoteDataSource
 ) {
-    val remote= remoteDataSource
+    val locale = localDataSource
+    val remote = remoteDataSource
 }
