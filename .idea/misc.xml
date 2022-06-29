@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/gradient_overlay.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_clock.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.20092592592592592" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_heart.xml" value="0.20277777777777778" />
@@ -12,9 +13,11 @@
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_restaurant.xml" value="0.2703125" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_sad.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/drawable/ic_star.xml" value="0.2703125" />
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/activity_details.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_favorites.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_jokes.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_overview.xml" value="0.2368659420289855" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/fragment_recipes.xml" value="0.25" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/placeholder_row_layout.xml" value="0.25" />
         <entry key="..\:/Users/nisha/AndroidStudioProjects/foody1/app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.13020833333333334" />
